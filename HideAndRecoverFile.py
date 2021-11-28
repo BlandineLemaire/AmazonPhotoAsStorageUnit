@@ -1,4 +1,5 @@
 import argparse
+import os
 
 parser = argparse.ArgumentParser(description="Amazon Drive Bypass ")
 parser.add_argument('-m', '--method',  dest='method', type=str, choices=["hide", "recover"], help="Select Method", required=True)
@@ -12,7 +13,9 @@ if options.method == "hide":
         hiddenContent = magicNumber + options.inputFile.read()
         options.outputFile.write(hiddenContent)
         options.outputFile.close()
-        print("I added magic number in inputFile in outputFile !")
+        print("I added magic number in inputFile !")
+        os.rename(options.outputFile.name, options.outputFile.name + ".png")
+        print("I added '.png' in outputFile name !")
     except Exception as e:
         print(e)
 else:
@@ -20,6 +23,7 @@ else:
         content = options.inputFile.read()[16:]
         options.outputFile.write(content)
         options.outputFile.close()
-        print("I recovered outputFile in inputFile")
+        print("I recovered the data from the inputFile ! ")
+
     except Exception as e:
         print(e)

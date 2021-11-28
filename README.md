@@ -19,6 +19,6 @@ Amazon does not seems to support files that are bigger than 48.82 Go
 ## TO-DO
 - [x] Add png magic number
 - [x] Remove png magic number
-- [ ] Automatically add `.png` when hiding
+- [x] Automatically add `.png` when hiding
 - [ ] Automatically remove `.png` when recovering
 - [ ] push the file via API Requests
